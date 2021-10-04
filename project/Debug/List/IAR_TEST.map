@@ -1,0 +1,325 @@
+###############################################################################
+#
+# IAR ELF Linker V8.20.1.14183/W32 for ARM                08/Mar/2019  14:52:10
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  E:\LAST_PROJECT_IAR\project\Debug\Exe\IAR_TEST.out
+#    Map file     =  E:\LAST_PROJECT_IAR\project\Debug\List\IAR_TEST.map
+#    Command line =  
+#        -f C:\Users\Admin\AppData\Local\Temp\EW6A99.tmp
+#        (E:\LAST_PROJECT_IAR\project\Debug\Obj\display.o
+#        E:\LAST_PROJECT_IAR\project\Debug\Obj\GPIO.o
+#        E:\LAST_PROJECT_IAR\project\Debug\Obj\Key_Pad.o
+#        E:\LAST_PROJECT_IAR\project\Debug\Obj\LCD.o
+#        E:\LAST_PROJECT_IAR\project\Debug\Obj\main.o
+#        E:\LAST_PROJECT_IAR\project\Debug\Obj\RTC_KL46.o
+#        E:\LAST_PROJECT_IAR\project\Debug\Obj\startup_MKL46Z4.o
+#        E:\LAST_PROJECT_IAR\project\Debug\Obj\system_MKL46Z4.o -o
+#        E:\LAST_PROJECT_IAR\project\Debug\Exe\IAR_TEST.out --map
+#        E:\LAST_PROJECT_IAR\project\Debug\List\IAR_TEST.map --config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0\arm\config\linker\NXP\MKL46Z256xxx4.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x000003ff] |
+                [from 0x00000410 to 0x0003ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 4K, alignment = 8 { };
+"P3":  place in [from 0x1fffe000 to 0x1fffffff] |
+                [from 0x20000000 to 0x20005fff] {
+          rw, block CSTACK, block HEAP };
+"P5":  place in [from 0x00000400 to 0x0000040f] { section FlashConfig };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P4"
+  rw                                  in "P3"
+  rw section application_specific_rw  in "P2|P4"
+
+
+  Section      Kind        Address    Size  Object
+  -------      ----        -------    ----  ------
+"A0":                                 0xc0
+  .intvec      ro code  0x00000000    0xc0  startup_MKL46Z4.o [1]
+                      - 0x000000c0    0xc0
+
+"P5":                                 0x10
+  FlashConfig  ro code  0x00000400    0x10  startup_MKL46Z4.o [1]
+                      - 0x00000410    0x10
+
+"P1":                               0x3650
+  .text        ro code  0x00000410  0x20b8  display.o [1]
+  .text        ro code  0x000024c8   0x364  GPIO.o [1]
+  .text        ro code  0x0000282c   0x2a4  RTC_KL46.o [1]
+  .text        ro code  0x00002ad0   0x4a6  LCD.o [1]
+  .text        ro code  0x00002f76     0x2  startup_MKL46Z4.o [1]
+  .text        ro code  0x00002f78   0x49c  Key_Pad.o [1]
+  .text        ro code  0x00003414    0xe0  I32DivModFast.o [4]
+  .text        ro code  0x000034f4    0x32  I64Mul.o [4]
+  .text        ro code  0x00003526    0x6a  I64DivMod.o [4]
+  .text        ro code  0x00003590     0x2  IntDivZer.o [4]
+  .text        ro code  0x00003592     0x2  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003594     0x2  I64DivZer.o [4]
+  .text        ro code  0x00003596     0x2  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003598    0x88  main.o [1]
+  .text        ro code  0x00003620    0x24  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003644    0x1e  cmain.o [4]
+  .text        ro code  0x00003662     0x4  low_level_init.o [3]
+  .text        ro code  0x00003666     0x8  exit.o [3]
+  .text        ro code  0x0000366e     0x2  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003670     0xa  cexit.o [4]
+  .text        ro code  0x0000367a     0x2  startup_MKL46Z4.o [1]
+  .text        ro code  0x0000367c    0x14  exit.o [5]
+  .rodata      const    0x00003690    0x1c  RTC_KL46.o [1]
+  .rodata      const    0x000036ac    0x14  display.o [1]
+  .rodata      const    0x000036c0    0x14  display.o [1]
+  .rodata      const    0x000036d4    0x14  display.o [1]
+  .rodata      const    0x000036e8    0x14  display.o [1]
+  .rodata      const    0x000036fc    0x14  display.o [1]
+  .rodata      const    0x00003710    0x14  display.o [1]
+  .rodata      const    0x00003724    0x14  display.o [1]
+  .rodata      const    0x00003738    0x14  display.o [1]
+  .rodata      const    0x0000374c    0x14  display.o [1]
+  .rodata      const    0x00003760    0x14  display.o [1]
+  .rodata      const    0x00003774    0x14  display.o [1]
+  .rodata      const    0x00003788    0x14  display.o [1]
+  .rodata      const    0x0000379c    0x14  display.o [1]
+  .rodata      const    0x000037b0    0x10  display.o [1]
+  .rodata      const    0x000037c0    0x10  display.o [1]
+  .rodata      const    0x000037d0    0x10  display.o [1]
+  .rodata      const    0x000037e0    0x10  display.o [1]
+  .rodata      const    0x000037f0    0x10  display.o [1]
+  .rodata      const    0x00003800    0x10  display.o [1]
+  .rodata      const    0x00003810    0x10  display.o [1]
+  .rodata      const    0x00003820    0x10  display.o [1]
+  .rodata      const    0x00003830    0x10  display.o [1]
+  .rodata      const    0x00003840    0x10  display.o [1]
+  .rodata      const    0x00003850    0x10  display.o [1]
+  .rodata      const    0x00003860    0x10  display.o [1]
+  .rodata      const    0x00003870    0x10  display.o [1]
+  .rodata      const    0x00003880    0x10  display.o [1]
+  .rodata      const    0x00003890    0x10  display.o [1]
+  .rodata      const    0x000038a0    0x10  display.o [1]
+  .rodata      const    0x000038b0    0x10  display.o [1]
+  .rodata      const    0x000038c0    0x10  display.o [1]
+  .rodata      const    0x000038d0    0x10  display.o [1]
+  .rodata      const    0x000038e0    0x10  display.o [1]
+  .rodata      const    0x000038f0    0x10  display.o [1]
+  .rodata      const    0x00003900    0x10  display.o [1]
+  .rodata      const    0x00003910    0x10  display.o [1]
+  .rodata      const    0x00003920    0x10  RTC_KL46.o [1]
+  .rodata      const    0x00003930    0x10  RTC_KL46.o [1]
+  .rodata      const    0x00003940     0xc  display.o [1]
+  .rodata      const    0x0000394c     0xc  display.o [1]
+  .rodata      const    0x00003958     0xc  display.o [1]
+  .rodata      const    0x00003964     0xc  display.o [1]
+  .text        ro code  0x00003970     0xc  system_MKL46Z4.o [1]
+  .text        ro code  0x0000397c     0xc  cstartup_M.o [4]
+  .rodata      const    0x00003988     0x8  display.o [1]
+  .rodata      const    0x00003990     0x8  display.o [1]
+  .rodata      const    0x00003998     0x8  display.o [1]
+  .rodata      const    0x000039a0     0x8  display.o [1]
+  .rodata      const    0x000039a8     0x8  display.o [1]
+  .rodata      const    0x000039b0     0x8  display.o [1]
+  .rodata      const    0x000039b8     0x8  display.o [1]
+  .rodata      const    0x000039c0     0x8  display.o [1]
+  .rodata      const    0x000039c8     0x8  display.o [1]
+  .rodata      const    0x000039d0     0x8  display.o [1]
+  .rodata      const    0x000039d8     0x8  display.o [1]
+  .rodata      const    0x000039e0     0x8  display.o [1]
+  .rodata      const    0x000039e8     0x8  display.o [1]
+  .rodata      const    0x000039f0     0x8  display.o [1]
+  .text        ro code  0x000039f8     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a00     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a08     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a10     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a18     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a20     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a28     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a30     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a38     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a40     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a48     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a50     0x8  startup_MKL46Z4.o [1]
+  .text        ro code  0x00003a58     0x8  startup_MKL46Z4.o [1]
+                      - 0x00003a60  0x3650
+
+"P3":                                0x800
+  CSTACK                0x1fffe000   0x800  <Block>
+    CSTACK     uninit   0x1fffe000   0x800  <Block tail>
+                      - 0x1fffe800   0x800
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module             ro code  ro data  rw data
+    ------             -------  -------  -------
+E:\LAST_PROJECT_IAR\project\Debug\Obj: [1]
+    GPIO.o                 868
+    Key_Pad.o            1 180
+    LCD.o                1 190
+    RTC_KL46.o             676       60
+    display.o            8 376      788
+    main.o                 136
+    startup_MKL46Z4.o      358
+    system_MKL46Z4.o        12
+    --------------------------------------------
+    Total:              12 796      848
+
+command line: [2]
+    --------------------------------------------
+    Total:
+
+dl6M_tln.a: [3]
+    exit.o                   8
+    low_level_init.o         4
+    --------------------------------------------
+    Total:                  12
+
+rt6M_tl.a: [4]
+    I32DivModFast.o        224
+    I64DivMod.o            106
+    I64DivZer.o              2
+    I64Mul.o                50
+    IntDivZer.o              2
+    cexit.o                 10
+    cmain.o                 30
+    cstartup_M.o            12
+    --------------------------------------------
+    Total:                 436
+
+shb_l.a: [5]
+    exit.o                  20
+    --------------------------------------------
+    Total:                  20
+
+    Linker created                         2 048
+------------------------------------------------
+    Grand Total:        13 264      848    2 048
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x00003645         Code  Gb  cmain.o [4]
+CSTACK$$Base            0x1fffe000          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fffe800          --   Gb  - Linker created -
+Clear_Screen_LCD        0x00002f67   0x10  Code  Gb  LCD.o [1]
+Delay_LCD               0x00002b53    0xe  Code  Gb  LCD.o [1]
+Display_Control_LCD     0x00002d9d   0x32  Code  Gb  LCD.o [1]
+Entry_Mode_LCD          0x00002d77   0x26  Code  Gb  LCD.o [1]
+Function_Set_LCD        0x00002d45   0x32  Code  Gb  LCD.o [1]
+GPIO_Init_LCD           0x00002ad1   0x82  Code  Gb  LCD.o [1]
+Go_To_XY_LCD            0x00002f4d   0x1a  Code  Gb  LCD.o [1]
+LCD_send                0x00002be5  0x104  Code  Gb  LCD.o [1]
+LY                      0x00003910   0x10  Data  Lc  display.o [1]
+LY                      0x00003930   0x10  Data  Lc  RTC_KL46.o [1]
+MONTH_DAYS              0x00003690   0x1c  Data  Lc  RTC_KL46.o [1]
+Print_Number            0x00002ed9   0x74  Code  Gb  LCD.o [1]
+RTC_ConvertDatetimeToSecs
+                        0x0000297b   0x72  Code  Gb  RTC_KL46.o [1]
+RTC_ConvertSecsToDatetime
+                        0x00002875   0x94  Code  Gb  RTC_KL46.o [1]
+RTC_GetDatetime         0x00002a59   0x44  Code  Gb  RTC_KL46.o [1]
+RTC_IsDatetimeCorrectFormat
+                        0x00002909   0x72  Code  Gb  RTC_KL46.o [1]
+RTC_SetDatetime         0x000029ed   0x6c  Code  Gb  RTC_KL46.o [1]
+Region$$Table$$Base     0x00000000          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00000000          --   Gb  - Linker created -
+Setup_LCD               0x00002dcf   0x72  Code  Gb  LCD.o [1]
+SystemInit              0x00003971    0x8  Code  Gb  system_MKL46Z4.o [1]
+ULY                     0x00003900   0x10  Data  Lc  display.o [1]
+ULY                     0x00003920   0x10  Data  Lc  RTC_KL46.o [1]
+Wait_Busy_LCD           0x00002b61   0x84  Code  Gb  LCD.o [1]
+Write_Char_LCD          0x00002e51   0x4e  Code  Gb  LCD.o [1]
+Write_Cmd_LCD           0x00002ce9   0x4e  Code  Gb  LCD.o [1]
+Write_String_LCD        0x00002ebd   0x1c  Code  Gb  LCD.o [1]
+__Vectors               0x00000000          --   Gb  startup_MKL46Z4.o [1]
+__Vectors_End           0x000000c0         Data  Gb  startup_MKL46Z4.o [1]
+__Vectors_Size {Abs}    0x000000c0          --   Gb  startup_MKL46Z4.o [1]
+__aeabi_idiv            0x00003441         Code  Gb  I32DivModFast.o [4]
+__aeabi_idiv0           0x00003591         Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x00003441         Code  Gb  I32DivModFast.o [4]
+__aeabi_ldiv0           0x00003595         Code  Gb  I64DivZer.o [4]
+__aeabi_lmul            0x000034f5         Code  Gb  I64Mul.o [4]
+__aeabi_uidiv           0x00003447         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidivmod        0x00003447         Code  Gb  I32DivModFast.o [4]
+__aeabi_uldivmod        0x00003527         Code  Gb  I64DivMod.o [4]
+__cmain                 0x00003645         Code  Gb  cmain.o [4]
+__exit                  0x0000367d   0x14  Code  Gb  exit.o [5]
+__iar_program_start     0x0000397d         Code  Gb  cstartup_M.o [4]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__low_level_init        0x00003663    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000         Data  Gb  startup_MKL46Z4.o [1]
+__vector_table_0x1c     0x0000001c         Data  Gb  startup_MKL46Z4.o [1]
+_call_main              0x00003651         Code  Gb  cmain.o [4]
+_exit                   0x00003671         Code  Gb  cexit.o [4]
+_main                   0x0000365f         Code  Gb  cmain.o [4]
+alarm_time              0x000014e5   0x84  Code  Gb  display.o [1]
+change_cur_time         0x00000ae1  0xa04  Code  Gb  display.o [1]
+check_Key_Pad           0x00003031  0x25e  Code  Gb  Key_Pad.o [1]
+check_alarm_time        0x000020a5  0x15e  Code  Gb  display.o [1]
+create_alarm            0x00001589  0xafc  Code  Gb  display.o [1]
+current_time_F2         0x00000a01   0xb6  Code  Gb  display.o [1]
+display_port_init       0x00000411   0xb0  Code  Gb  display.o [1]
+exit                    0x00003667    0x8  Code  Gb  exit.o [3]
+home_screen             0x000004c1   0xc6  Code  Gb  display.o [1]
+init_rtc                0x0000282d   0x48  Code  Gb  RTC_KL46.o [1]
+main                    0x000035ad   0x6e  Code  Gb  main.o [1]
+num_check_Key_Pad       0x000032a5  0x158  Code  Gb  Key_Pad.o [1]
+ports_and_alarms        0x00000587   0x84  Code  Gb  display.o [1]
+reset_GPIO              0x000026b5   0x34  Code  Gb  GPIO.o [1]
+set_cur_time            0x0000096d   0x84  Code  Gb  display.o [1]
+set_port                0x0000063d  0x320  Code  Gb  display.o [1]
+set_up_GPIO             0x000024c9  0x1ec  Code  Gb  GPIO.o [1]
+set_up_GPIO_input       0x000026e9  0x116  Code  Gb  GPIO.o [1]
+set_up_Key_Pad          0x00002f79   0xa8  Code  Gb  Key_Pad.o [1]
+set_up_init             0x00003599   0x14  Code  Gb  main.o [1]
+view_alarm              0x00002255  0x216  Code  Gb  display.o [1]
+
+
+[1] = E:\LAST_PROJECT_IAR\project\Debug\Obj
+[2] = command line
+[3] = dl6M_tln.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  13 264 bytes of readonly  code memory
+     848 bytes of readonly  data memory
+   2 048 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
